@@ -32,7 +32,7 @@ def main(path):
             with open(soubor, 'rb') as f_in:
                 with gzip.open(soubor + '.gz', 'wb') as f_out:
                     f_out.writelines(f_in)
-                    os.remove(soubor)
+                    path.remove(soubor)
         else:
             continue
 
