@@ -33,6 +33,7 @@ def main(path):
             with open(path + '/' + soubor, 'rb') as f_in:
                 with gzip.open(soubor + '.gz', 'wb') as f_out:
                     f_out.writelines(f_in)
+                    os.remove(path + '/' + soubor)
         else:
             continue
 
