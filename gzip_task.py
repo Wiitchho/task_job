@@ -4,6 +4,7 @@ import os
 
 parser = argparse.ArgumentParser(description='Zkomprimování souborů .log')
 parser.add_argument('file_path', type=str, help='Cesta k programu')
+parser.add_argument('-k', '--keep', action='store_true')
 args = parser.parse_args()
 
 
@@ -13,9 +14,9 @@ def find_f(path):
     :return
     list souborů, které chceme převést
     '''
-    path = os.listdir(path)
+    path_s = os.listdir(path)
     rdy_gzip = []
-    for soubor in path:
+    for soubor in path_s:
         if ".gz" not in soubor:
             rdy_gzip.append(soubor)
     return rdy_gzip
@@ -33,6 +34,7 @@ def main(path):
             with open(path + '/' + soubor, 'rb') as f_in:
                 with gzip.open(soubor + '.gz', 'wb') as f_out:
                     f_out.writelines(f_in)
+                    if
                     os.remove(path + '/' + soubor)
         else:
             continue
@@ -40,3 +42,4 @@ def main(path):
 
 if __name__ == '__main__':
     main(args.file_path)
+    print('Proběhlo')
