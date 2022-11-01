@@ -25,5 +25,5 @@ Poté zadáme `esc` tím vyskočíme z insert, odsadíme a napíšeme `:wq` pro 
 
 ## Použití
 skript se spouští pomoci argumentu `python3 gzip_task.py /var/log`
-Soubory po zazipování se smažou a zůstanou pouze .gzip soubory.
+Pokud bude přidán jako argument `-k`, soubory se po zazipování nesmažou. V jinačím případě se smažou a zůstanou pouze `soubory.gz`. 
 
