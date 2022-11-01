@@ -1,8 +1,7 @@
 # Zkomprimování souborů .log
 
 Script na zkomprimování logu ve složce
-`/var/log` Program by měl ušetřit místo přepsáním do formátu .gzip. Poté vymaže uložené logy ve formátu `.log` a ponechá
-pouze logy ve formátu `.gz`
+`/var/log` Program by měl ušetřit místo přepsáním do formátu .gzip.
 
 ## Instalace cron
 
