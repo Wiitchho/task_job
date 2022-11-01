@@ -8,7 +8,6 @@ parser.add_argument('-k', '--keep', action='store_true', help='nesmaže komprimo
 args = parser.parse_args()
 
 
-
 def find_f(path):
     '''
     Vyhledá soubory, které nejsou ve formátu .gzip
@@ -35,14 +34,9 @@ def main(path):
             with open(path + '/' + soubor, 'rb') as f_in:
                 with gzip.open(path + '/' + soubor + '.gz', 'wb') as f_out:
                     f_out.writelines(f_in)
-                    if not args.keep True:
+                    if args.keep is not True:
                         os.remove(path + '/' + soubor)
-                    else:
-                        continue
-        else:
-            continue
 
 
 if __name__ == '__main__':
     main(args.file_path)
-    print('Proběhlo')
