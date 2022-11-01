@@ -4,8 +4,9 @@ import os
 
 parser = argparse.ArgumentParser(description='Zkomprimování souborů .log')
 parser.add_argument('file_path', type=str, help='Cesta k programu')
-#parser.add_argument('-k', '--keep', action='store_true')
+parser.add_argument('-k', '--keep', action='store_true', help='Ponechat soubory pomoci --keep')
 args = parser.parse_args()
+
 
 
 def find_f(path):
@@ -34,8 +35,10 @@ def main(path):
             with open(path + '/' + soubor, 'rb') as f_in:
                 with gzip.open(path + '/' + soubor + '.gz', 'wb') as f_out:
                     f_out.writelines(f_in)
-                    #os.remove(path + '/' + soubor)
-
+                    if not args.keep True:
+                        os.remove(path + '/' + soubor)
+                    else:
+                        continue
         else:
             continue
 
