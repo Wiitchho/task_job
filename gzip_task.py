@@ -4,7 +4,7 @@ import os
 
 parser = argparse.ArgumentParser(description='Zkomprimování souborů .log')
 parser.add_argument('file_path', type=str, help='Cesta k programu')
-parser.add_argument('-k', '--keep', action='store_true')
+#parser.add_argument('-k', '--keep', action='store_true')
 args = parser.parse_args()
 
 
